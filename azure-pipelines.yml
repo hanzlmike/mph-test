@@ -1,0 +1,12 @@
+trigger: [main]
+pool:
+    vmImage: ubuntu-latest
+resources:
+  containers:
+    - container: buildagent
+      image: ubuntu:22.04
+jobs:
+  - job: build
+    container: buildagent
+    steps:
+      - script: echo hello
